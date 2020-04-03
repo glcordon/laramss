@@ -47,7 +47,8 @@ class TenantController extends Controller
                     'name' => $request->mentor_name,
                     'email' => $request->mentor_email,
                     'description' => $request->mentor_description,
-                ]);
+                ])
+                ->save();
         Stripe::setApiKey(env('STRIPE_SECRET'));
         Plan::create(array("amount" => 3000, 
         "interval" => "month", 
