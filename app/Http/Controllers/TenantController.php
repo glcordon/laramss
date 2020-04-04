@@ -42,7 +42,7 @@ class TenantController extends Controller
     {
         $thumb_path = Storage::disk('public')->put('tenants',$request->mentor_thumb);
         $mentor = Tenant::new()
-            ->withDomains([Str::slug($request->desired_name).'.localhost'])
+            ->withDomains([Str::slug($request->desired_name).'.mysportsshare.com'])
             ->withData(['thumb' => $thumb_path,
                     'name' => $request->mentor_name,
                     'email' => $request->mentor_email,
