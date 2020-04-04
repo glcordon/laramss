@@ -6,7 +6,13 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Create New Mentor</div>
-
+                @if (\Session::has('success'))
+                <div class="alert alert-success">
+                    <ul>
+                        <li>{!! \Session::get('success') !!}</li>
+                    </ul>
+                </div>
+            @endif
                 <div class="card-body">
                     <form method="POST" action="{{ route('create-tenant') }}" enctype="multipart/form-data">
                         @csrf

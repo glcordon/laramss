@@ -49,12 +49,12 @@ class TenantController extends Controller
                     'description' => $request->mentor_description,
                 ])
                 ->save();
-        Stripe::setApiKey(env('STRIPE_SECRET'));
-        Plan::create(array("amount" => 3000, 
-        "interval" => "month", 
-        "product" =>array("name" => $request->mentor_name." Mentee"), "currency" => "usd", "id" => $request->desired_name));
-
-       return redirect()->back();
+        // Stripe::setApiKey(env('STRIPE_SECRET'));
+        // Plan::create(array("amount" => 3000, 
+        // "interval" => "month", 
+        // "product" =>array("name" => $request->mentor_name." Mentee"), "currency" => "usd", "id" => $request->desired_name));
+        return redirect()->back()->with('success', [$request->desired_name.' Was Created Successfully!']);  
+        
     }
 
     /**
