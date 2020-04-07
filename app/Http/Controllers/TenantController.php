@@ -8,7 +8,9 @@ use App\Tenant as Mentor;
 use Stancl\Tenancy\Tenant;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Redirect;
 
 class TenantController extends Controller
 {
@@ -49,11 +51,12 @@ class TenantController extends Controller
                     'description' => $request->mentor_description,
                 ])
                 ->save();
-        // Stripe::setApiKey(env('STRIPE_SECRET'));
-        // Plan::create(array("amount" => 3000, 
-        // "interval" => "month", 
-        // "product" =>array("name" => $request->mentor_name." Mentee"), "currency" => "usd", "id" => $request->desired_name));
-        return redirect()->back()->with('success', $request->desired_name.' Was Created Successfully!');  
+        Stripe::setApiKey(env('STRIPE_SECRET'));
+        Plan::create(array("amount" => 3000, 
+        "interval" => "month", 
+        "product" =>array("name" => $request->mentor_name." Mentee"), "currency" => "usd", "id" => $request->desired_name));
+        Session::flash('message', $request->desired_name.' Was Created Successfully!');
+        return Redirect::back();
         
     }
 

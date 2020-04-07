@@ -2,6 +2,22 @@
 
 @section('content')
 <div class="container">
+    <section id="home">
+        <div class="inner-pages-banner route bg-image p-r" style="background-image: url(assets/img/vienna-reyes-qCrKTET_09o-unsplash.jpg)">
+          <div class="overlay-itro"></div>
+          <div class="banner-container-inner">
+          <div class="display-table">
+            <div class="table-cell">
+              <div class="container">
+                <div class="banner-container">
+                  <h1 class="intro-title wow fadeInDown" data-wow-delay=".80s" data-wow-duration="1s">Login</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+  </section>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

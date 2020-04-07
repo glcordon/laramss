@@ -1,89 +1,90 @@
-<!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>My Sports Share</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+  <!-- Favicons -->
+  <link href="{{ global_asset('assets/img/favicon.png') }}" rel="icon">
+  <link href="{{ global_asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
-    <title>{{ config('app.name', 'My Sports Share') }}</title>
+  <!-- Bootstrap CSS File -->
+  <link href="{{ global_asset('assets/lib/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
 
-    <!-- Scripts -->
-    
-    <script src="{{ global_asset('js/app.js') }}" defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
-    </script> 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <!-- Libraries CSS Files -->
+  <link href="{{ global_asset('assets/lib/animate/css/animate.min.css') }}" rel="stylesheet">
+  <link href="{{ global_asset('assets/lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+  <link href="{{ global_asset('assets/lib/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
+  <link href="{{ global_asset('assets/lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet">
 
-    <!-- Styles -->
-    <link href="{{ global_asset('css/app.css') }}" rel="stylesheet">
+  <!-- Main Stylesheet File -->
+  <link href="{{ global_asset('assets/css/style.css') }}" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: DevFolio
+    Theme URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
 </head>
-<body>
+<body id="page-top">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'My Sports Share') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a href="/add-course" class="nav-link">Add Course</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/list" class="nav-link">Courses</a>
-                        </li>
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
+        <!--/ Nav Star /-->
+    <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
+      <div class="container p-r">
+        <a class="navbar-brand js-scroll" href="/">
+          <img src="assets/img/logo.png" alt="" class="img-fluid">
+        </a>
+        <div class="menu-item">
+          <ul>
+            <li><a href="/list" class="js-scroll">Courses</a></li>
+            <li><a href="/login">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--/ Nav End /-->
         <main class="py-4">
             @yield('content')
         </main>
     </div>
+    <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="copyright-box">
+                <span class="copyright">&copy; Copyright My Sport Share. All Rights Reserved</span>
+                </div>
+              </div>
+            <div class="col-sm-6 text-right">
+              <div class="footer-links">
+                <ul>
+                  <li><a href="">About Us</a></li>
+                  <li><a href="">Contact Us</a></li>
+                  <li><a href="">Press</a></li>
+                  <li><a href="">Become a Partner</a></li>
+                </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     @stack('scripts')
 </body>
+<!-- JavaScript Libraries -->
+<script src="{{ global_asset('assets/lib/jquery/jquery.min.js') }}"></script>
+<script src="{{ global_asset('assets/lib/jquery/jquery-migrate.min.js') }}"></script>
+<script src="{{ global_asset('assets/lib/popper/popper.min.js') }}"></script>
+<script src="{{ global_asset('assets/lib/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ global_asset('assets/lib/easing/easing.min.js') }}"></script>
+<script src="{{ global_asset('assets/lib/lightbox/js/lightbox.min.js') }}"></script>
+<script src="{{ global_asset('assets/lib/animate/js/wow.min.js') }}"></script>
+<script src="{{ global_asset('assets/lib/slick/slick.min.js') }}"></script>
+
+<!-- Template Main Javascript File -->
+<script src="assets/js/main.js"></script>
 </html>
