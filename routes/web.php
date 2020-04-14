@@ -24,5 +24,6 @@ Route::get('/make-mentor', function(){
     return view('mentor.create');
 });
 
+Route::get('/list-all', 'TenantController@list')->name('list-tenants');
 Route::post('/create-mentor', 'TenantController@store')->name('create-tenant');
 

@@ -40,7 +40,7 @@
         </a>
         <div class="menu-item">
           <ul>
-            <li><a href="/list-all" class="js-scroll">Courses</a></li>
+            <li><a href="/list" class="js-scroll">Courses</a></li>
             <li><a href="/login">Login</a></li>
           </ul>
         </div>
