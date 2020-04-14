@@ -34,7 +34,7 @@
                     <p class="Courses-avilability">Available Now</p>
                     <h1 class="intro-title">Elite Sports Training, <span>Mentorship</span> & Events</h1>
                     <div class="banner-slider-content">
-                      <a class="btn btn-primary" href="elite-program.html">Learn More <i class="icon-right-arrow1"></i></a>
+                      <a class="btn btn-primary" href="/list-all">Learn More <i class="icon-right-arrow1"></i></a>
                       <span>New Content Monthly</span>
                     </div>
                   </div>
