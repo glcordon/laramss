@@ -31,7 +31,19 @@ class TenantController extends Controller
      */
     public function list()
     {
-        return view('main.index');
+        $tenants = tenancy()->all();
+        $all_tenants = $tenants->map(function($x){
+            $is_active = true;
+            return [
+                'name' => $x->data['name'] ?? '', 
+                'thumb' => $x->data['thumb'] ?? '', 
+                'description' => $x->data['description'] ?? '',
+                'domain' => $x->domains[0] ?? '',
+                'is_active' => $is_active ?? '',
+                ];
+        });
+        
+        return view('main.index', compact('all_tenants'));
     }
 
     /**
