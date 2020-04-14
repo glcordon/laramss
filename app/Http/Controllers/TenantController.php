@@ -31,7 +31,7 @@ class TenantController extends Controller
      */
     public function list()
     {
-        return view('list-tenants');
+        return route('list-tenants');
     }
 
     /**
