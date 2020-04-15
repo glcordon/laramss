@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
 use Stripe\Plan;
 use Stripe\Stripe;
 use App\Tenant as Mentor;
@@ -21,7 +22,8 @@ class TenantController extends Controller
      */
     public function index()
     {
-        //
+        $courses = Course::get();
+        dd($courses);
     }
 
     /**
