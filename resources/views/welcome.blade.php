@@ -142,13 +142,7 @@
         </div>
         <div class="row">
           
-          
-              <div class="card-btn-holder">
-                <a href="partners.html" class="subscribe-btn">Subscribe <i class="icon-right-arrow1 arrow-one"></i><i class="icon-right-arrow1 arrow-two"></i></a>
-                <a href="subscribed-partner.html" class="more-info-btn">More Info</a>
-              </div>
-            </div>
-          </div>
+          @include('partials.course.course-card')
         </div>
       </div>
     </section>

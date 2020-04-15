@@ -15,7 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $tenants = tenancy()->all();
+        $all_tenants = $tenants->map(function($x){
+            $is_active = true;
+            return [
+                'name' => $x->data['name'] ?? '', 
+                'thumb' => $x->data['thumb'] ?? '', 
+                'description' => $x->data['description'] ?? '',
+                'domain' => $x->domains[0] ?? '',
+                'is_active' => $is_active ?? '',
+                ];
+        });
+    return view('welcome', compact('all_tenants'));
 });
 
 Auth::routes();
