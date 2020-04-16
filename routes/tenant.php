@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/app', function () {
-    return view('mentor_welcome');
-});
+Route::get('/app', 'TenantController@index');
 Route::get('/add-course', function(){
     return view('course.create');
 })->name('add-course');
