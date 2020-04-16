@@ -21,6 +21,8 @@ class MakeLessonsTable extends Migration
             $table->text('lesson_description');
             $table->string('lesson_ttile', 300)->nullable();
             
+            $table->bigInteger('course_id');
+            
             $table->timestamps();
         });
     }
