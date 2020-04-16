@@ -17,8 +17,8 @@ class MakeVideosTable extends Migration
             $table->bigIncrements('id');
             
             $table->string('video_url', 1500)->nullable();
-            $table->bigIncrements('videoable_id', 100)->nullable();
-            $table->bigIncrements('videoable_type', 100)->nullable();
+            $table->bigInteger('videoable_id')->nullable();
+            $table->string('videoable_type', 100)->nullable();
             
             $table->timestamps();
         });
