@@ -13,6 +13,7 @@ class MakeLessonsTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('lessons');
         Schema::create('lessons', function (Blueprint $table) {
             $table->bigIncrements('id');
             
