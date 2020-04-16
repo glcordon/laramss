@@ -18,7 +18,7 @@ class MakeLessonsTable extends Migration
             $table->bigIncrements('id');
             
             $table->string('lesson_title', 300)->nullable();
-            $table->text('lesson_title');
+            $table->text('lesson_description');
             $table->string('lesson_ttile', 300)->nullable();
             
             $table->timestamps();
