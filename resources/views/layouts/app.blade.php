@@ -22,7 +22,11 @@
 
   <!-- Main Stylesheet File -->
   <link href="{{ global_asset('assets/css/style.css') }}" rel="stylesheet">
-
+  <style>
+     .card{
+       color:black !important;
+     }
+  </style>
   <!-- =======================================================
     Theme Name: DevFolio
     Theme URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
